@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const  Header = () => {
     return ( 
-        <Card>
+        <Card className="p-1">
             <CardContent className="flex flex-row items-center justify-between">
              <Image src="/imagem/logotipo.svg" 
              alt="fws-baber"
