@@ -6,9 +6,15 @@ import Image from "next/image"
 import { Card, CardContent } from "./_components/ui/card";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { Badge } from "@/components/ui/badge";
+import { db } from "@/_lib/prisma"
+import BarbershopItem from "./_components/barbershop-item";
 
 
-const Home = () => {
+
+const Home = async () => {
+   // chamar meu banco de dados 
+   const barbershops = await db.barbershop.findMany({});
+   //console.log({ barbershops })
  return (
    <div>
       {/* header */}
@@ -19,7 +25,7 @@ const Home = () => {
 
       <div className="flex items-center gap-2 mt-2">
          <Input placeholder="Faça sua busca..." />
-         <Button>
+         <Button className="bg-indigo-700">
             <SearchIcon />
          </Button>
       </div>
@@ -51,6 +57,12 @@ const Home = () => {
          </div>
         </CardContent>
       </Card> 
+      {/*Agendamento*/}
+      <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+         Recomendados
+      </h2>
+      {barbershops.map(barbershop => ( <BarbershopItem key={barbershop.id} 
+      barbershop={barbershop} />)) }
    </div>
  </div>
 )
