@@ -8,7 +8,7 @@ const  Header = () => {
     return ( 
         <Card className="min-w-full max-w-full">
             <CardContent className="flex flex-row items-center justify-between">
-             <Image src="/imagem/logotipo.svg" 
+             <Image src="/logotipo.svg" 
              alt="fws-baber"
               width={120} height={18} 
             />
@@ -17,7 +17,6 @@ const  Header = () => {
             </Button>
             </CardContent>
         </Card>
-        
 
      );
 }
