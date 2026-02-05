@@ -3,6 +3,7 @@ import { ChevronLeftIcon, MapPin, MapPinIcon, MenuIcon, StarIcon } from "lucide-
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ServiceItem from "@/app/_components/service-item";
+import PhoneItem from "@/app/_components/phone-item";
 
 
 
@@ -84,6 +85,17 @@ const barbershopPage = async ({ params }: BarbershopPageProps) => {
           {barbershop.services.map((service)=> (
             <ServiceItem key={service.id} service={service} />
           ))}
+        </div>
+
+
+       {/* CONTATO */}
+      <div className="w-full border-y p-4 sm:p-5"> 
+       <p className="font-bold text-[12px]">Contato</p>
+       <div className="space-y-3"> 
+        {barbershop.phones.map((phone) =>(
+          <PhoneItem key={phone} phone={phone}/>
+        ))}
+        </div>   
         </div>
 
     </div>

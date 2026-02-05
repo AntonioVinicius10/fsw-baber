@@ -26,7 +26,7 @@ const Home = async () => {
    return (
       <div>
       {/* header */}
-      <Header />
+         <Header />
    <div className="p-2">
       <h2 className="text-xl font-bold"> Olá, Antonio</h2>
       <p>Sengunda-feira, 05 de Junho.</p>
@@ -76,17 +76,6 @@ const Home = async () => {
           barbershop={barbershop} />)) }
       </div>
 <br></br>
-
-
-      <footer>
-         <Card>
-            <CardContent className="px-2">
-               <p className="text-sm text-gray-400">
-                  Feito por <span className="font-bold ">Antonio Vinicius </span>
-               </p>
-            </CardContent>
-         </Card>
-      </footer>
  </div>
 )
 };
